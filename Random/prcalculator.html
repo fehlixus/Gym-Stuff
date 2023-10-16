@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One-Rep Max Calculator</title>
+</head>
+<body>
+  <h2>One-Rep Max Calculator</h2>
+  <label for="weight">Weight Lifted (in kg):</label>
+  <input type="number" id="weight" name="weight" value="kg"><br><br>
+
+  <label for="reps">Reps Completed:</label>
+  <input type="number" id="reps" name="reps" value="reps"><br><br>
+
+  <button onclick="calculateOneRepMax()">Calculate</button>
+
+  <h3>Rep Ranges:</h3>
+  <ul id="repRanges"></ul>
+
+  <script>
+    function calculateOneRepMax() {
+      const weight = parseInt(document.getElementById("weight").value);
+      const reps = parseInt(document.getElementById("reps").value);
+      const oneRepMax = weight * (1 + reps / 30);
+      const repRanges = document.getElementById("repRanges");
+      repRanges.innerHTML = "";
+      for (let i = 1; i <= 10; i++) {
+        const repMax = oneRepMax / (1 + i / 30);
+        const listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(`Rep ${i} max: ${repMax.toFixed(2)} kg`));
+        repRanges.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
