@@ -9,3 +9,4 @@ Some workout plans and other stuff.
 
 ## Random Stuff
 - [PR-Calculator](https://github.com/fehlixus/Gym-Stuff/blob/main/Random/prcalculator.ipynb)
+- [Same PR-Calculator using JavaScript and a **very** simple html interface](https://github.com/fehlixus/Gym-Stuff/blob/main/Random/prcalculator.html)
